@@ -9,7 +9,7 @@ import ArrayComponent from "./components/ArrayComponent";
 import CallApplyBind from "./components/CallApplyBind";
 import PromiseApp from "./components/PromiseApp";
 import UseReducerApp from "./components/UseReducerApp";
-import MonacoEditorApp from "./components/MonacoEditorApp";
+import FunctionCurryingApp from "./components/FunctionCurryingApp";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
                 display: "flex",
                 flexDirection: 'column'
             }}>
-                {/*<FirstComponent/>*/}
+                <FirstComponent/>
                 {/*<SecondComponent/>*/}
                 {/*<ArrayComponent/>*/}
                 {/*<CallApplyBind/>*/}
@@ -28,7 +28,7 @@ function App() {
                 {/*<ReduxStoreApp/>*/}
                 {/*<PromiseApp/>*/}
                 {/*<UseReducerApp/>*/}
-                <MonacoEditorApp/>
+                <FunctionCurryingApp/>
             </div>
         </Provider>
     );

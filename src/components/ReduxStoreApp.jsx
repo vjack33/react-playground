@@ -8,18 +8,12 @@ export function ReduxStoreApp() {
     const count = useSelector((state) => state.counter.value)
     const name = useSelector((state) => state.userData.username)
 
-    console.log("name", name, window.sessionStorage.getItem("operation"));
-    window.localStorage.removeItem("operation")
-    console.log();
-
     return (
         <div>
             <div>
                 <button
                     aria-label="Increment value"
                     onClick={() => {
-                        window.localStorage.setItem("operation", "Increment");
-                        window.sessionStorage.setItem("operation", "Increment");
                         dispatch(increment())
                     }}
                 >
@@ -30,13 +24,15 @@ export function ReduxStoreApp() {
                 <button
                     aria-label="Decrement value"
                     onClick={() => {
-                        window.sessionStorage.setItem("operation", "Decrement");
                         dispatch(decrement())
                     }}
                 >
                     Decrement
                 </button>
-                <button onClick={() => dispatch(updateName(Math.floor(Math.random() * 11)))}>
+                <button
+                    onClick={() =>
+                        dispatch(updateName(Math.floor(Math.random() * 11)))
+                    }>
                     Change Name
                 </button>
             </div>

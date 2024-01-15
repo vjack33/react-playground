@@ -5,12 +5,6 @@ function FirstComponent(props) {
 
     let [apiData, setApiData] = useState([])
 
-    // useEffect(() => {
-    //     fetch('https://dummyjson.com/products')
-    //         .then(res => res.json())
-    //         .then(data => setApiData(data?.products ?? []));
-    // }, []);
-
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(res => res.json())
@@ -18,7 +12,13 @@ function FirstComponent(props) {
                 console.log(data)
                 setApiData(data)
             })
+
+        fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then(res => res.json())
+            .then(data => console.log("DATA", data))
+
     }, [])
+
 
     const [inputValue, setInputValue] = useState(1)
 
@@ -30,8 +30,9 @@ function FirstComponent(props) {
     let l2 = [4, 5, 6]
     let l3 = [...l1, ...l2]
 
+    console.log(l1.concat(l2,l3))
 
-    console.log( l3)
+    console.log(l3)
 
     console.log(list)
 
