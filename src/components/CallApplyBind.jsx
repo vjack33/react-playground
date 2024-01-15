@@ -2,12 +2,8 @@ export default function CallApplyBind() {
 
     function callFn() {
         // The call() method is a predefined JavaScript method.
-        const person1 = {
+        const p1  = {
             firstName:"John",
-            lastName: "Doe"
-        }
-        const person2 = {
-            firstName:"Mary",
             lastName: "Doe"
         }
 
@@ -17,7 +13,7 @@ export default function CallApplyBind() {
             }
         }
 
-        console.log(person.fullName.call(person1,'Oslo'))
+        console.log(person.fullName.call(p1,'Oslo'))
     }
 
     function applyFn() {

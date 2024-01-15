@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     value: 0,
@@ -20,6 +20,20 @@ export const CounterSlice = createSlice({
     },
 })
 
-export const { increment, decrement, incrementByAmount } = CounterSlice.actions
+export const UserDataSlice = createSlice({
+    name: 'userData',
+    initialState: {
+        username: "No Data"
+    },
+    reducers: {
+        updateName: (state, action) => {
+            state.username = action.payload
+        }
+    }
+})
 
-export default CounterSlice.reducer
+export const {increment, decrement, incrementByAmount} = CounterSlice.actions
+export const CounterReducer = CounterSlice.reducer
+
+export const {updateName} = UserDataSlice.actions
+export const UserDataReducer = UserDataSlice.reducer
